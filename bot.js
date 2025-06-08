@@ -8,12 +8,6 @@ const bot = mineflayer.createBot({
   version: '1.20.1'              // Match your server version
 });
 
-bot.on('chat', (username, message) => {
-  if (username !== bot.username) {
-    bot.chat(`Hello ${username}!`);
-  }
-});
-
 bot.on('end', () => {
   console.log('Bot disconnected, reconnecting...');
   setTimeout(() => require('./bot'), 5000); // Auto-reconnect
